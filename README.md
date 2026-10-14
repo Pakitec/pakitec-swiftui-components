@@ -2,6 +2,10 @@
 
 Biblioteca compartilhada de componentes e tokens visuais para os aplicativos nativos da Pakitec.
 
+## Versionamento
+
+Cada push na branch `master` dispara a workflow `Auto tag master`, que cria a próxima tag patch automaticamente (`v1.0.0`, `v1.0.1`, `v1.0.2`...). O primeiro push cria `v1.0.0`; os seguintes incrementam apenas o patch.
+
 ## Princípios
 
 - Tema claro/escuro usando as cores semânticas de `PakitecTheme`.
