@@ -15,12 +15,12 @@ public struct PakitecListRow<Accessory: View>: View {
             if let systemImage { Image(systemName: systemImage).foregroundStyle(PakitecTheme.accent).frame(width: 24) }
             VStack(alignment: .leading, spacing: 3) {
                 Text(title).font(.body.weight(.medium)).foregroundStyle(PakitecTheme.primaryText)
-                if let subtitle { Text(subtitle).font(.caption).foregroundStyle(PakitecTheme.secondaryText) }
+                if let subtitle { Text(subtitle).font(.subheadline).foregroundStyle(PakitecTheme.secondaryText) }
             }
             Spacer()
             accessory
         }
-        .padding(.vertical, 10)
+        .padding(.vertical, 8)
     }
 }
 

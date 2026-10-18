@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pakitec — Antes e depois</title>
+  <style>
+    :root { color-scheme: light; --ink:#17171a; --muted:#6b6b76; --line:#e5e5ea; --group:#f2f2f7; --card:#fff; --accent:#5645e8; --green:#248a5a; --orange:#ad7000; --red:#c93636; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif; color:var(--ink); background:#e9e9ee; }
+    .page { max-width:1380px; margin:auto; padding:40px 24px 64px; }
+    header { margin-bottom:28px; }
+    h1 { margin:0 0 8px; font-size:clamp(28px,4vw,44px); letter-spacing:-.04em; }
+    header p { margin:0; color:var(--muted); font-size:17px; }
+    .compare { display:grid; grid-template-columns:1fr 1fr; gap:20px; align-items:start; }
+    .panel { background:#f7f7fa; border:1px solid #d9d9df; border-radius:22px; overflow:hidden; box-shadow:0 12px 32px #00000010; }
+    .panel-head { padding:18px 22px; border-bottom:1px solid var(--line); background:var(--card); }
+    .panel-head h2 { margin:0 0 4px; font-size:20px; }
+    .panel-head p { margin:0; color:var(--muted); font-size:14px; }
+    .screen { padding:22px; }
+    .screen-title { margin-bottom:18px; }
+    .screen-title h3 { margin:0 0 4px; font-size:28px; letter-spacing:-.03em; }
+    .screen-title p { margin:0; color:var(--muted); }
+    .stack { display:grid; gap:16px; }
+    .card { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:18px; }
+    .native .card { border:0; border-radius:14px; background:linear-gradient(135deg,#ffffffdd,#f9f9fb); box-shadow:0 1px 2px #0000000a; }
+    .card h4 { margin:0 0 8px; font-size:17px; }
+    .muted { color:var(--muted); }
+    .field { display:grid; gap:7px; margin-top:14px; }
+    label { font-size:14px; font-weight:600; }
+    .native label { font-weight:400; color:var(--muted); }
+    input, select { width:100%; height:46px; padding:0 13px; font:inherit; color:var(--ink); background:#f0f0f5; border:1px solid var(--line); border-radius:12px; outline:none; }
+    .native input, .native select { background:var(--card); border-color:#c9c9cf; border-radius:9px; }
+    .buttons { display:grid; gap:9px; margin-top:16px; }
+    button { min-height:46px; border:0; border-radius:11px; padding:0 16px; font:600 15px inherit; cursor:pointer; }
+    .primary { background:var(--accent); color:white; }
+    .secondary { background:#ececf1; color:var(--ink); }
+    .ghost { background:transparent; color:var(--accent); }
+    .danger { background:var(--red); color:white; }
+    .native button { min-height:40px; border-radius:9px; }
+    .native .primary { background:var(--accent); }
+    .native .secondary { background:transparent; color:var(--accent); border:1px solid #c9c9cf; }
+    .native .danger { background:transparent; color:var(--red); }
+    .section-title { margin:8px 0 -4px; font-size:13px; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color:var(--muted); }
+    .badge-row { display:flex; flex-wrap:wrap; gap:8px; }
+    .badge { display:inline-flex; align-items:center; min-height:28px; padding:0 10px; border-radius:99px; font-size:13px; font-weight:600; background:#e8e8ed; }
+    .success { color:var(--green); background:#e0f3e9; } .warning { color:var(--orange); background:#fff0ce; } .error { color:var(--red); background:#fde4e4; }
+    .native .badge { background:transparent; padding:0 2px; font-weight:500; }
+    .native .badge::before { content:"●"; font-size:9px; margin-right:6px; }
+    .row { min-height:62px; display:flex; align-items:center; gap:12px; border-bottom:1px solid var(--line); }
+    .row:last-child { border-bottom:0; }
+    .icon { width:32px; height:32px; display:grid; place-items:center; border-radius:9px; background:#ececf1; }
+    .row strong { display:block; font-size:15px; } .row small { color:var(--muted); }
+    .row .right { margin-left:auto; color:var(--muted); }
+    .toggle { margin-left:auto; width:48px; height:29px; border-radius:99px; background:#c9c9cf; padding:3px; }
+    .toggle.on { background:#35c759; } .toggle i { display:block; width:23px; height:23px; border-radius:50%; background:white; box-shadow:0 1px 3px #0003; } .toggle.on i { margin-left:19px; }
+    .native .toggle { width:45px; height:27px; } .native .toggle i { width:21px; height:21px; } .native .toggle.on i { margin-left:18px; }
+    .progress { height:7px; border-radius:99px; background:#dedee4; overflow:hidden; margin-top:10px; } .progress span { display:block; width:65%; height:100%; background:var(--accent); border-radius:inherit; }
+    .alert { padding:13px 14px; border-radius:12px; background:#e9e8ff; color:#3d32a4; font-size:14px; }
+    /* O alerta permanece com a linguagem visual atual por decisão de produto. */
+    .tabbar { display:flex; justify-content:space-around; padding:9px 8px 7px; background:var(--card); border-top:1px solid var(--line); color:var(--muted); }
+    .tabbar div { display:grid; gap:2px; place-items:center; font-size:11px; } .tabbar .selected { color:var(--accent); }
+    .note { margin-top:18px; color:var(--muted); font-size:13px; line-height:1.5; }
+    @media (max-width:850px) { .compare { grid-template-columns:1fr; } .page { padding:24px 14px 48px; } }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header><h1>Pakitec Components</h1><p>Comparação visual: linguagem atual × direção mais nativa do SwiftUI.</p></header>
+    <div class="compare">
+      <section class="panel"><div class="panel-head"><h2>Antes</h2><p>Mais identidade própria: roxo forte, cards, bordas e controles grandes.</p></div><div class="screen">
+        <div class="screen-title"><h3>Configurações</h3><p>Gerencie suas preferências</p></div><div class="stack">
+          <div class="card"><h4>Perfil</h4><p class="muted">Atualize suas informações pessoais.</p><div class="field"><label>Nome</label><input placeholder="Digite seu nome"></div><div class="buttons"><button class="primary">Continuar →</button><button class="secondary">Ação secundária</button><button class="danger">Excluir conta</button></div></div>
+          <div class="section-title">Status</div><div class="badge-row"><span class="badge">Neutro</span><span class="badge success">Ativo</span><span class="badge warning">Atenção</span><span class="badge error">Erro</span></div>
+          <div class="card"><div class="row"><div class="icon">♙</div><div><strong>Notificações</strong><small>Receber atualizações</small></div><div class="toggle on"><i></i></div></div><div class="row"><div class="icon">⌁</div><div><strong>Privacidade</strong><small>Controle seus dados</small></div><div class="right">›</div></div></div>
+          <div class="card"><h4>Progresso</h4><div class="progress"><span></span></div><p class="muted">65% concluído</p></div><div class="alert">ⓘ Este é um alerta visual reutilizável.</div>
+        </div>
+      </div></section>
+      <section class="panel native"><div class="panel-head"><h2>Depois</h2><p>Mais próximo da Apple: semântica, contenção e componentes do sistema.</p></div><div class="screen">
+        <div class="screen-title"><h3>Configurações</h3><p>Gerencie suas preferências</p></div><div class="stack">
+          <div class="card"><h4>Perfil</h4><p class="muted">Atualize suas informações pessoais.</p><div class="field"><label>Nome</label><input placeholder="Digite seu nome"></div><div class="buttons"><button class="primary">Continuar</button><button class="secondary">Ação secundária</button><button class="danger">Excluir conta</button></div></div>
+          <div class="section-title">Status</div><div class="badge-row"><span class="badge">Neutro</span><span class="badge success">Ativo</span><span class="badge warning">Atenção</span><span class="badge error">Erro</span></div>
+          <div class="card"><div class="row"><div class="icon">♙</div><div><strong>Notificações</strong><small>Receber atualizações</small></div><div class="toggle on"><i></i></div></div><div class="row"><div class="icon">⌁</div><div><strong>Privacidade</strong><small>Controle seus dados</small></div><div class="right">›</div></div></div>
+          <div class="card"><h4>Progresso</h4><div class="progress"><span></span></div><p class="muted">65% concluído</p></div><div class="alert">ⓘ Este é um alerta visual reutilizável.</div>
+        </div>
+      </div><div class="tabbar"><div class="selected">⌂<span>Início</span></div><div>⚙<span>Ajustes</span></div><div>⋯<span>Mais</span></div></div></section>
+    </div>
+    <p class="note">Esta é uma direção visual, não uma reprodução pixel-perfect do SwiftUI. O objetivo é aprovar a linguagem antes de aplicar os tokens e componentes reais.</p>
+  </main>
+</body>
+</html>

@@ -6,6 +6,10 @@ Biblioteca compartilhada de componentes e tokens visuais para os aplicativos nat
 
 Cada push na branch `master` dispara a workflow `Auto tag master`, que cria a próxima tag patch automaticamente (`v1.0.0`, `v1.0.1`, `v1.0.2`...). O primeiro push cria `v1.0.0`; os seguintes incrementam apenas o patch.
 
+## Direção visual
+
+A biblioteca segue os componentes nativos do SwiftUI como padrão: usa a cor de destaque do aplicativo, tipografia semântica, materiais, controles nativos e agrupamentos mais leves. `PakitecAlertCard` mantém sua aparência visual original por ser um componente de feedback já consolidado.
+
 ## Princípios
 
 - Tema claro/escuro usando as cores semânticas de `PakitecTheme`.

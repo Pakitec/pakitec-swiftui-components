@@ -12,19 +12,32 @@ public struct PakitecButton: View {
     }
 
     public var body: some View {
-        Button(action: action) {
-            Label(title, systemImage: systemImage ?? "")
-                .font(.headline)
-                .frame(maxWidth: .infinity, minHeight: 48)
+        switch style {
+        case .primary, .destructive:
+            Button(action: action) { label() }
+                .buttonStyle(.borderedProminent)
+                .tint(tint)
+        case .secondary:
+            Button(action: action) { label() }
+                .buttonStyle(.bordered)
+                .tint(tint)
+        case .ghost:
+            Button(action: action) { label() }
+                .buttonStyle(.plain)
+                .tint(tint)
         }
-        .buttonStyle(.borderedProminent)
-        .tint(tint)
-        .foregroundStyle(foreground)
-        .opacity(style == .ghost ? 0.9 : 1)
+    }
+
+    @ViewBuilder
+    private func label() -> some View {
+        if let systemImage {
+            Label(title, systemImage: systemImage)
+        } else {
+            Text(title)
+        }
     }
 
     private var tint: Color {
-        switch style { case .primary: PakitecTheme.accent; case .secondary: PakitecTheme.surfaceElevated; case .ghost: .clear; case .destructive: PakitecTheme.danger }
+        switch style { case .primary: PakitecTheme.accent; case .secondary, .ghost: PakitecTheme.accent; case .destructive: PakitecTheme.danger }
     }
-    private var foreground: Color { style == .secondary || style == .ghost ? PakitecTheme.primaryText : .white }
 }
