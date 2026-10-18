@@ -10,10 +10,13 @@ public struct PakitecTextField: View {
     }
 
     public var body: some View {
-        VStack(alignment: .leading, spacing: 6) {
-            Text(title).font(.subheadline).foregroundStyle(PakitecTheme.secondaryText)
+        VStack(alignment: .leading, spacing: 8) {
+            Text(title).font(.subheadline.weight(.semibold)).foregroundStyle(PakitecTheme.primaryText)
             TextField(prompt, text: $text)
-                .textFieldStyle(.roundedBorder)
+                .textFieldStyle(.plain)
+                .padding(.horizontal, 14).frame(minHeight: 48)
+                .background(PakitecTheme.surfaceElevated, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+                .overlay(RoundedRectangle(cornerRadius: 12, style: .continuous).stroke(PakitecTheme.divider, lineWidth: 1))
         }
     }
 }
