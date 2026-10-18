@@ -13,4 +13,11 @@ final class PakitecSwiftUIComponentsTests: XCTestCase {
         XCTAssertEqual(PakitecMetrics.compactButtonHeight, 40)
         XCTAssertEqual(PakitecMetrics.buttonCornerRadius, 14)
     }
+
+    @MainActor
+    func testTextEditorCanBeConstructed() {
+        var value = ""
+        _ = PakitecTextEditor("Notas", text: .init(get: { value }, set: { value = $0 }))
+        XCTAssertEqual(value, "")
+    }
 }

@@ -45,6 +45,7 @@ private struct PakitecComponentsPreview: View {
                     VStack(alignment: .leading, spacing: 14) {
                         PakitecSectionHeader("Formulário")
                         PakitecSecureField("Senha", text: $password, prompt: "Digite sua senha")
+                        PakitecTextEditor("Observações", text: $name, minHeight: 90)
                         PakitecToggleRow("Notificações", subtitle: "Receber atualizações do aplicativo", isOn: $enabled)
                         PakitecPicker("Estado", selection: $choice, options: ["Ativo", "Pausado", "Arquivado"]) { $0 }
                         PakitecValidationMessage("Exemplo de validação", tone: .success)
