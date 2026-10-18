@@ -7,4 +7,10 @@ final class PakitecSwiftUIComponentsTests: XCTestCase {
         XCTAssertNotNil(PakitecTheme.surface)
         XCTAssertNotNil(PakitecTheme.accent)
     }
+
+    func testThemeExposesInteractionMetrics() {
+        XCTAssertEqual(PakitecMetrics.buttonHeight, 48)
+        XCTAssertEqual(PakitecMetrics.compactButtonHeight, 40)
+        XCTAssertEqual(PakitecMetrics.buttonCornerRadius, 14)
+    }
 }

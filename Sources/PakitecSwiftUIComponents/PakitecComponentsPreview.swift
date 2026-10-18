@@ -60,6 +60,14 @@ private struct PakitecComponentsPreview: View {
                     }
                 }
 
+                PakitecActionSection("Ações", subtitle: "Ações agrupadas para telas de detalhe") {
+                    PakitecActionRow("Abrir terminal", systemImage: "terminal") { }
+                    Divider().overlay(PakitecTheme.divider)
+                    PakitecActionRow("Editar tarefa", systemImage: "pencil") { }
+                    Divider().overlay(PakitecTheme.divider)
+                    PakitecActionRow("Excluir tarefa", systemImage: "trash", tone: .destructive) { }
+                }
+
                 HStack {
                     PakitecLoadingView(message: "Carregando")
                     Spacer()

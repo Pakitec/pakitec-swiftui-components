@@ -15,16 +15,13 @@ public struct PakitecButton: View {
         switch style {
         case .primary, .destructive:
             Button(action: action) { label() }
-                .buttonStyle(.borderedProminent)
-                .tint(tint)
+                .buttonStyle(PakitecFilledButtonStyle(color: tint))
         case .secondary:
             Button(action: action) { label() }
-                .buttonStyle(.bordered)
-                .tint(tint)
+                .buttonStyle(PakitecOutlinedButtonStyle(color: tint))
         case .ghost:
             Button(action: action) { label() }
-                .buttonStyle(.plain)
-                .tint(tint)
+                .buttonStyle(PakitecGhostButtonStyle(color: tint))
         }
     }
 
@@ -39,5 +36,47 @@ public struct PakitecButton: View {
 
     private var tint: Color {
         switch style { case .primary: PakitecTheme.accent; case .secondary, .ghost: PakitecTheme.accent; case .destructive: PakitecTheme.danger }
+    }
+}
+
+private struct PakitecFilledButtonStyle: ButtonStyle {
+    let color: Color
+
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .font(.body.weight(.semibold))
+            .foregroundStyle(.white)
+            .frame(maxWidth: .infinity, minHeight: PakitecMetrics.buttonHeight)
+            .padding(.horizontal, PakitecSpacing.large)
+            .background(configuration.isPressed ? PakitecTheme.accentPressed : color, in: RoundedRectangle(cornerRadius: PakitecMetrics.buttonCornerRadius, style: .continuous))
+            .opacity(configuration.isPressed ? 0.92 : 1)
+            .contentShape(RoundedRectangle(cornerRadius: PakitecMetrics.buttonCornerRadius, style: .continuous))
+    }
+}
+
+private struct PakitecOutlinedButtonStyle: ButtonStyle {
+    let color: Color
+
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .font(.body.weight(.semibold))
+            .foregroundStyle(color)
+            .frame(maxWidth: .infinity, minHeight: PakitecMetrics.buttonHeight)
+            .padding(.horizontal, PakitecSpacing.large)
+            .background(color.opacity(configuration.isPressed ? 0.16 : 0.08), in: RoundedRectangle(cornerRadius: PakitecMetrics.buttonCornerRadius, style: .continuous))
+            .overlay { RoundedRectangle(cornerRadius: PakitecMetrics.buttonCornerRadius, style: .continuous).stroke(color.opacity(0.35), lineWidth: 1) }
+    }
+}
+
+private struct PakitecGhostButtonStyle: ButtonStyle {
+    let color: Color
+
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .font(.body.weight(.semibold))
+            .foregroundStyle(color)
+            .frame(maxWidth: .infinity, minHeight: PakitecMetrics.compactButtonHeight)
+            .padding(.horizontal, PakitecSpacing.medium)
+            .background(color.opacity(configuration.isPressed ? 0.12 : 0), in: RoundedRectangle(cornerRadius: PakitecMetrics.buttonCornerRadius, style: .continuous))
     }
 }

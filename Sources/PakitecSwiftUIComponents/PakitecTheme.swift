@@ -4,9 +4,10 @@ import UIKit
 #endif
 
 public enum PakitecTheme {
-    /// Uses the host application's accent by default, matching SwiftUI controls.
-    public static let accent = Color.accentColor
-    public static let accentSecondary = Color.accentColor.opacity(0.8)
+    /// Pakitec's semantic accent. Apps can still override the view tint locally.
+    public static let accent = Color(light: Color(hex: 0x4F46E5), dark: Color(hex: 0x6366F1))
+    public static let accentPressed = Color(light: Color(hex: 0x4338CA), dark: Color(hex: 0x818CF8))
+    public static let accentSecondary = Color(light: Color(hex: 0x7C3AED), dark: Color(hex: 0xA78BFA))
 
     public static let background = Color(light: Color(hex: 0xF2F2F7), dark: Color(hex: 0x1C1C1E))
     public static let surface = Color(light: .white, dark: Color(hex: 0x2C2C2E))
