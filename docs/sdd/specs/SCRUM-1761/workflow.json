@@ -1,0 +1,557 @@
+{
+  "schemaVersion": 2,
+  "issueKey": "SCRUM-1761",
+  "runId": "94ccd08a-63e2-4200-8759-d974eda0593d",
+  "planRevision": 1,
+  "workspacePath": "/Volumes/External HD/Projetos/pakitec/pakitec-swiftui-components",
+  "phase": "BUILD_COMPLETED",
+  "lastStablePhase": "READY_TO_BUILD",
+  "buildConcurrency": "sequential",
+  "buildStartedAt": "2026-10-28T22:25:28-03:00",
+  "buildFinishedAt": "2026-10-29T13:52:00-03:00",
+  "mode": "full",
+  "modeReason": "requisito visual, dois repositorios (pacote e app Joe) na mesma Task, mais de 3 arquivos de producao e regra de acessibilidade",
+  "jira": {
+    "profileId": "pakitec",
+    "projectKey": "SCRUM"
+  },
+  "refinement": {
+    "verdict": "PASS",
+    "issueHash": "e597739b75dd30963c23b108990046c1c12e98356430d4755dfcb03d54e5cacf",
+    "checkedAt": "2026-10-28T21:46:46-03:00",
+    "warnings": [
+      "P1: valores dos tokens de intensidade propostos no plano e aprovados por captura (reversivel)",
+      "P2: opacidade minima do fundo do Terminal proposta no plano e aprovada por captura",
+      "P3: Parte 2 inicia somente apos a tag v1.1.0; mesma Task SCRUM-1761",
+      "P4: validacao visual exige simulador ou dispositivo com OS 26; sem ele o QA visual nao passa",
+      "P5: AC-1 a AC-6 enviados ao customfield_10000, nao confirmados na leitura; usar issue.md como fonte",
+      "P6: merge, push e tag so no /sdd-build, com confirmacao",
+      "P7: com Aumentar contraste, usar fundo solido ou Material; o plano escolhe"
+    ]
+  },
+  "hashes": {
+    "issue": "3521d48ad84104d97d162d4844542ea13affd0c820d933d25e37dad6d54d1c1c",
+    "assetsManifest": "440f5bca0688292a4aca9d83f2d8caa4a4ac92bf4460cb9a4c872f6e5bb39fe6",
+    "spec": "ec4cde3450ff30f4cf91ae1caac67dee01f8e4aa2b37901037293414b9b5f707",
+    "checklist": "7d0ff27045d1ea46fe8d3c3d743b1c88e17992e5f0ecbb39fbc45a6eaddb4884",
+    "research": "d20dff3dd62401363024c68395e12eb2248a777ddf9dae8c5a8f91fb1b6062fd",
+    "plan": "6024aec049884c951b2c0e799c8686b2f3ef2fad7733c089cf7658626d847463",
+    "tasks": "cdd706e550b61e4dabae5c14e9b3fd44e3f9ecaa8c2843f80b9b378a2ef68206"
+  },
+  "subtasks": {
+    "SPEC": {
+      "issueKey": "SCRUM-1762",
+      "status": "done",
+      "owner": "sdd-spec-writer",
+      "startedAt": "2026-10-28T21:48:05-03:00",
+      "finishedAt": "2026-10-28T21:49:09-03:00",
+      "observation": "Spec e checklist concluidos."
+    },
+    "RESEARCH": {
+      "issueKey": "SCRUM-1763",
+      "status": "done",
+      "owner": "sdd-researcher",
+      "startedAt": "2026-10-28T21:49:13-03:00",
+      "finishedAt": "2026-10-28T21:51:34-03:00",
+      "observation": "Pesquisa concluida; risco R1 registrado."
+    },
+    "PLAN": {
+      "issueKey": "SCRUM-1764",
+      "status": "done",
+      "owner": "sdd-planner",
+      "startedAt": "2026-10-28T21:51:38-03:00",
+      "finishedAt": "2026-10-28T21:54:30-03:00",
+      "observation": "Plano e 20 tarefas concluidos."
+    },
+    "TASK-001": {
+      "issueKey": "SCRUM-1765",
+      "status": "done",
+      "owner": "sdd-implementer",
+      "repo": "pacote",
+      "startedAt": "2026-10-28T22:26:02-03:00",
+      "finishedAt": "2026-10-28T22:27:48-03:00",
+      "observation": "Testes criados; falham so por simbolos ausentes (esperado)."
+    },
+    "TASK-002": {
+      "issueKey": "SCRUM-1766",
+      "status": "done",
+      "owner": "sdd-implementer",
+      "repo": "pacote",
+      "startedAt": "2026-10-28T22:28:00-03:00",
+      "finishedAt": "2026-10-28T22:28:49-03:00",
+      "observation": "swift build PASS; swift test adiado para TASK-003 (simbolo ausente)."
+    },
+    "TASK-003": {
+      "issueKey": "SCRUM-1767",
+      "status": "done",
+      "owner": "sdd-implementer",
+      "repo": "pacote",
+      "startedAt": "2026-10-28T22:28:58-03:00",
+      "finishedAt": "2026-10-28T22:31:23-03:00",
+      "observation": "26 testes OK; builds iOS e macOS OK."
+    },
+    "TASK-004": {
+      "issueKey": "SCRUM-1768",
+      "status": "done",
+      "owner": "sdd-implementer",
+      "repo": "pacote",
+      "startedAt": "2026-10-28T22:31:26-03:00",
+      "finishedAt": "2026-10-28T22:32:38-03:00",
+      "observation": "Card e AlertCard com vidro; testes e builds OK."
+    },
+    "TASK-005": {
+      "issueKey": "SCRUM-1769",
+      "status": "done",
+      "owner": "sdd-implementer",
+      "repo": "pacote",
+      "startedAt": "2026-10-28T22:32:42-03:00",
+      "finishedAt": "2026-10-28T22:34:09-03:00",
+      "observation": "Novos parametros publicos com padrao: showsSurface, inToolbar. Testes e builds OK."
+    },
+    "TASK-006": {
+      "issueKey": "SCRUM-1770",
+      "status": "done",
+      "owner": "sdd-implementer",
+      "repo": "pacote",
+      "startedAt": "2026-10-28T22:34:14-03:00",
+      "finishedAt": "2026-10-28T22:35:35-03:00",
+      "observation": "Button e Badge com vidro; R4 (Badge em Card) fica para TASK-011."
+    },
+    "TASK-007": {
+      "issueKey": "SCRUM-1771",
+      "status": "done",
+      "owner": "sdd-implementer",
+      "repo": "pacote",
+      "startedAt": "2026-10-28T22:35:39-03:00",
+      "finishedAt": "2026-10-28T22:36:58-03:00",
+      "observation": "Borda fixa divider removida de TextField/SecureField; decisao a confirmar."
+    },
+    "TASK-008": {
+      "issueKey": "SCRUM-1772",
+      "status": "done",
+      "owner": "sdd-implementer",
+      "repo": "pacote",
+      "startedAt": "2026-10-28T22:37:01-03:00",
+      "finishedAt": "2026-10-28T22:38:23-03:00",
+      "observation": "Preview com variantes; PakitecGlassOverrides interno em PakitecGlassSurface.swift."
+    },
+    "TASK-009": {
+      "issueKey": "SCRUM-1773",
+      "status": "done",
+      "owner": "sdd-implementer",
+      "repo": "pacote",
+      "startedAt": "2026-10-28T22:38:27-03:00",
+      "finishedAt": "2026-10-28T22:39:10-03:00",
+      "observation": "README atualizado; linha 13 sobre AlertCard conflita com a nova secao."
+    },
+    "TASK-010": {
+      "issueKey": "SCRUM-1774",
+      "status": "done",
+      "owner": "sdd-qa-reviewer",
+      "repo": "pacote",
+      "startedAt": "2026-10-28T22:39:13-03:00",
+      "finishedAt": "2026-10-28T22:39:48-03:00",
+      "observation": "26 testes OK; builds iOS/macOS OK; Package.swift sem diff."
+    },
+    "TASK-011": {
+      "issueKey": "SCRUM-1775",
+      "status": "done",
+      "owner": "sdd-qa-reviewer",
+      "repo": "pacote",
+      "startedAt": "2026-10-28T22:39:52-03:00",
+      "finishedAt": "2026-10-28T23:03:50-03:00",
+      "observation": "AC-001..004 oficiais validadas; AC-002 por Material forcado aceito pelo operador; tokens aprovados; obs contraste R4/R5, botao secundario, TabBar."
+    },
+    "TASK-012": {
+      "issueKey": "SCRUM-1776",
+      "status": "done",
+      "owner": "sdd-implementer",
+      "repo": "pacote",
+      "startedAt": "2026-10-28T23:04:05-03:00",
+      "finishedAt": "2026-10-28T23:05:10-03:00",
+      "observation": "Opcao B. Merge 7c9418a, tag v1.1.0 e master no origin; swift test 26 OK."
+    },
+    "TASK-013": {
+      "issueKey": "SCRUM-1777",
+      "status": "done",
+      "owner": "sdd-implementer",
+      "repo": "app",
+      "startedAt": "2026-10-28T23:05:36-03:00",
+      "finishedAt": "2026-10-28T23:07:41-03:00",
+      "observation": "Executada manualmente pelo orquestrador por autorizacao do operador (sdd-implementer sem acesso ao repo do app). minimumVersion 1.1.0, Package.resolved em 1.1.0 (7c9418a); xcodebuild macOS Debug OK."
+    },
+    "TASK-014": {
+      "issueKey": "SCRUM-1778",
+      "status": "done",
+      "owner": "sdd-implementer",
+      "repo": "app",
+      "startedAt": "2026-10-28T23:08:00-03:00",
+      "finishedAt": "2026-10-28T23:16:10-03:00",
+      "observation": "Execucao manual autorizada pelo operador (sdd-implementer sem acesso ao repo do app); builds macOS e iOS Simulator OK."
+    },
+    "TASK-015": {
+      "issueKey": "SCRUM-1779",
+      "status": "done",
+      "owner": "sdd-implementer",
+      "repo": "app",
+      "startedAt": "2026-10-28T23:08:00-03:00",
+      "finishedAt": "2026-10-28T23:16:10-03:00",
+      "observation": "Execucao manual autorizada pelo operador (sdd-implementer sem acesso ao repo do app); builds macOS e iOS Simulator OK."
+    },
+    "TASK-016": {
+      "issueKey": "SCRUM-1780",
+      "status": "done",
+      "owner": "sdd-implementer",
+      "repo": "app",
+      "startedAt": "2026-10-28T23:08:00-03:00",
+      "finishedAt": "2026-10-28T23:16:10-03:00",
+      "observation": "Execucao manual autorizada pelo operador (sdd-implementer sem acesso ao repo do app); builds macOS e iOS Simulator OK."
+    },
+    "TASK-017": {
+      "issueKey": "SCRUM-1781",
+      "status": "done",
+      "owner": "sdd-implementer",
+      "repo": "app",
+      "startedAt": "2026-10-28T23:08:00-03:00",
+      "finishedAt": "2026-10-28T23:16:10-03:00",
+      "observation": "Execucao manual autorizada pelo operador (sdd-implementer sem acesso ao repo do app); builds macOS e iOS Simulator OK."
+    },
+    "TASK-018": {
+      "issueKey": "SCRUM-1782",
+      "status": "done",
+      "owner": "sdd-implementer",
+      "repo": "app",
+      "startedAt": "2026-10-28T23:08:00-03:00",
+      "finishedAt": "2026-10-28T23:16:10-03:00",
+      "observation": "Execucao manual autorizada pelo operador (sdd-implementer sem acesso ao repo do app); builds macOS e iOS Simulator OK."
+    },
+    "TASK-019": {
+      "issueKey": "SCRUM-1783",
+      "status": "done",
+      "owner": "orquestrador (manual)",
+      "repo": "app",
+      "startedAt": "2026-10-29T13:46:00-03:00",
+      "finishedAt": "2026-10-29T13:46:00-03:00",
+      "observation": "Manual autorizado. swift test 123/0; builds macOS e iOS OK."
+    },
+    "TASK-020": {
+      "issueKey": "SCRUM-1784",
+      "status": "done",
+      "owner": "orquestrador (manual)",
+      "repo": "app",
+      "startedAt": "2026-10-29T13:46:00-03:00",
+      "finishedAt": "2026-10-29T13:46:00-03:00",
+      "observation": "Manual autorizado. AC-005 oficial publicado (iOS 26.1); macOS 26 nao capturado."
+    },
+    "QA": {
+      "issueKey": "SCRUM-1785",
+      "status": "done",
+      "finishedAt": "2026-10-29T13:51:00-03:00"
+    }
+  },
+  "qa": {
+    "issueKey": "SCRUM-1785",
+    "status": "PASS",
+    "attempts": 2,
+    "startedAt": "2026-10-29T13:46:00-03:00",
+    "finishedAt": "2026-10-29T13:51:00-03:00",
+    "observation": "PASS no ciclo 2/3. Ciclo 1 FAIL por EvidenceUITests no pbxproj do app (corrigido)."
+  },
+  "attempts": {},
+  "eventLedger": {
+    "SCRUM-1761/plan/a203dda266a3/started": {
+      "issueKey": "SCRUM-1761",
+      "eventType": "PLAN_STARTED",
+      "commentId": "15592",
+      "recordedAt": "2026-10-28T23:35:16.867Z"
+    },
+    "SCRUM-1761/plan/a203dda266a3/blocked": {
+      "issueKey": "SCRUM-1761",
+      "eventType": "PLAN_BLOCKED",
+      "commentId": "15593",
+      "recordedAt": "2026-10-28T23:35:50.807Z"
+    },
+    "SCRUM-1761/plan/e597739b75dd/mode": {
+      "issueKey": "SCRUM-1761",
+      "eventType": "PHASE_STARTED",
+      "commentId": "15594",
+      "recordedAt": "2026-10-29T00:47:12.650Z"
+    },
+    "SCRUM-1761/94ccd08a/r1/spec/a1/started": {
+      "issueKey": "SCRUM-1762",
+      "eventType": "TASK_STARTED",
+      "commentId": "15595",
+      "recordedAt": "2026-10-29T00:48:05Z"
+    },
+    "SCRUM-1761/94ccd08a/r1/spec/a1/completed": {
+      "issueKey": "SCRUM-1762",
+      "eventType": "TASK_COMPLETED",
+      "commentId": "15596",
+      "recordedAt": "2026-10-29T00:49:09Z"
+    },
+    "SCRUM-1761/94ccd08a/r1/research/a1/started": {
+      "issueKey": "SCRUM-1763",
+      "eventType": "TASK_STARTED",
+      "commentId": "15597",
+      "recordedAt": "2026-10-29T00:49:13Z"
+    },
+    "SCRUM-1761/94ccd08a/r1/research/a1/completed": {
+      "issueKey": "SCRUM-1763",
+      "eventType": "TASK_COMPLETED",
+      "commentId": "15598",
+      "recordedAt": "2026-10-29T00:51:33Z"
+    },
+    "SCRUM-1761/94ccd08a/r1/plan/a1/started": {
+      "issueKey": "SCRUM-1764",
+      "eventType": "TASK_STARTED",
+      "commentId": "15599",
+      "recordedAt": "2026-10-29T00:51:37Z"
+    },
+    "SCRUM-1761/94ccd08a/r1/plan/a1/completed": {
+      "issueKey": "SCRUM-1764",
+      "eventType": "TASK_COMPLETED",
+      "commentId": "15600",
+      "recordedAt": "2026-10-29T00:54:30Z"
+    },
+    "SCRUM-1761/94ccd08a/r1/plan/ready": {
+      "issueKey": "SCRUM-1761",
+      "eventType": "PHASE_STARTED",
+      "commentId": "15601",
+      "recordedAt": "2026-10-29T00:56:02Z"
+    },
+    "SCRUM-1761/94ccd08a-63e2-4200-8759-d974eda0593d/r1/build/TASK-001/started": {
+      "issueKey": "SCRUM-1765",
+      "eventType": "TASK_STARTED",
+      "commentId": "15603",
+      "recordedAt": "2026-10-29T01:26:02Z"
+    },
+    "SCRUM-1761/94ccd08a-63e2-4200-8759-d974eda0593d/r1/build/TASK-001/completed": {
+      "issueKey": "SCRUM-1765",
+      "eventType": "TASK_COMPLETED",
+      "commentId": "15604",
+      "recordedAt": "2026-10-29T01:27:48Z"
+    },
+    "SCRUM-1761/94ccd08a-63e2-4200-8759-d974eda0593d/r1/build/TASK-002/started": {
+      "issueKey": "SCRUM-1766",
+      "eventType": "TASK_STARTED",
+      "commentId": "15605",
+      "recordedAt": "2026-10-29T01:28:00Z"
+    },
+    "SCRUM-1761/94ccd08a-63e2-4200-8759-d974eda0593d/r1/build/TASK-002/completed": {
+      "issueKey": "SCRUM-1766",
+      "eventType": "TASK_COMPLETED",
+      "commentId": "15606",
+      "recordedAt": "2026-10-29T01:28:49Z"
+    },
+    "SCRUM-1761/94ccd08a-63e2-4200-8759-d974eda0593d/r1/build/TASK-003/started": {
+      "issueKey": "SCRUM-1767",
+      "eventType": "TASK_STARTED",
+      "commentId": "15607",
+      "recordedAt": "2026-10-29T01:28:58Z"
+    },
+    "SCRUM-1761/94ccd08a-63e2-4200-8759-d974eda0593d/r1/build/TASK-003/completed": {
+      "issueKey": "SCRUM-1767",
+      "eventType": "TASK_COMPLETED",
+      "commentId": "15608",
+      "recordedAt": "2026-10-29T01:31:23Z"
+    },
+    "SCRUM-1761/94ccd08a-63e2-4200-8759-d974eda0593d/r1/build/TASK-004/started": {
+      "issueKey": "SCRUM-1768",
+      "eventType": "TASK_STARTED",
+      "commentId": "15609",
+      "recordedAt": "2026-10-29T01:31:26Z"
+    },
+    "SCRUM-1761/94ccd08a-63e2-4200-8759-d974eda0593d/r1/build/TASK-004/completed": {
+      "issueKey": "SCRUM-1768",
+      "eventType": "TASK_COMPLETED",
+      "commentId": "15610",
+      "recordedAt": "2026-10-29T01:32:38Z"
+    },
+    "SCRUM-1761/94ccd08a-63e2-4200-8759-d974eda0593d/r1/build/TASK-005/started": {
+      "issueKey": "SCRUM-1769",
+      "eventType": "TASK_STARTED",
+      "commentId": "15611",
+      "recordedAt": "2026-10-29T01:32:42Z"
+    },
+    "SCRUM-1761/94ccd08a-63e2-4200-8759-d974eda0593d/r1/build/TASK-005/completed": {
+      "issueKey": "SCRUM-1769",
+      "eventType": "TASK_COMPLETED",
+      "commentId": "15612",
+      "recordedAt": "2026-10-29T01:34:09Z"
+    },
+    "SCRUM-1761/94ccd08a-63e2-4200-8759-d974eda0593d/r1/build/TASK-006/started": {
+      "issueKey": "SCRUM-1770",
+      "eventType": "TASK_STARTED",
+      "commentId": "15613",
+      "recordedAt": "2026-10-29T01:34:14Z"
+    },
+    "SCRUM-1761/94ccd08a-63e2-4200-8759-d974eda0593d/r1/build/TASK-006/completed": {
+      "issueKey": "SCRUM-1770",
+      "eventType": "TASK_COMPLETED",
+      "commentId": "15614",
+      "recordedAt": "2026-10-29T01:35:35Z"
+    },
+    "SCRUM-1761/94ccd08a-63e2-4200-8759-d974eda0593d/r1/build/TASK-007/started": {
+      "issueKey": "SCRUM-1771",
+      "eventType": "TASK_STARTED",
+      "commentId": "15615",
+      "recordedAt": "2026-10-29T01:35:39Z"
+    },
+    "SCRUM-1761/94ccd08a-63e2-4200-8759-d974eda0593d/r1/build/TASK-007/completed": {
+      "issueKey": "SCRUM-1771",
+      "eventType": "TASK_COMPLETED",
+      "commentId": "15616",
+      "recordedAt": "2026-10-29T01:36:58Z"
+    },
+    "SCRUM-1761/94ccd08a-63e2-4200-8759-d974eda0593d/r1/build/TASK-008/started": {
+      "issueKey": "SCRUM-1772",
+      "eventType": "TASK_STARTED",
+      "commentId": "15617",
+      "recordedAt": "2026-10-29T01:37:01Z"
+    },
+    "SCRUM-1761/94ccd08a-63e2-4200-8759-d974eda0593d/r1/build/TASK-008/completed": {
+      "issueKey": "SCRUM-1772",
+      "eventType": "TASK_COMPLETED",
+      "commentId": "15618",
+      "recordedAt": "2026-10-29T01:38:23Z"
+    },
+    "SCRUM-1761/94ccd08a-63e2-4200-8759-d974eda0593d/r1/build/TASK-009/started": {
+      "issueKey": "SCRUM-1773",
+      "eventType": "TASK_STARTED",
+      "commentId": "15619",
+      "recordedAt": "2026-10-29T01:38:27Z"
+    },
+    "SCRUM-1761/94ccd08a-63e2-4200-8759-d974eda0593d/r1/build/TASK-009/completed": {
+      "issueKey": "SCRUM-1773",
+      "eventType": "TASK_COMPLETED",
+      "commentId": "15620",
+      "recordedAt": "2026-10-29T01:39:10Z"
+    },
+    "SCRUM-1761/94ccd08a-63e2-4200-8759-d974eda0593d/r1/build/TASK-010/started": {
+      "issueKey": "SCRUM-1774",
+      "eventType": "TASK_STARTED",
+      "commentId": "15621",
+      "recordedAt": "2026-10-29T01:39:13Z"
+    },
+    "SCRUM-1761/94ccd08a-63e2-4200-8759-d974eda0593d/r1/build/TASK-010/completed": {
+      "issueKey": "SCRUM-1774",
+      "eventType": "TASK_COMPLETED",
+      "commentId": "15622",
+      "recordedAt": "2026-10-29T01:39:47Z"
+    },
+    "SCRUM-1761/94ccd08a-63e2-4200-8759-d974eda0593d/r1/build/TASK-011/started": {
+      "issueKey": "SCRUM-1775",
+      "eventType": "TASK_STARTED",
+      "commentId": "15623",
+      "recordedAt": "2026-10-29T01:39:52Z"
+    },
+    "SCRUM-1761/94ccd08a-63e2-4200-8759-d974eda0593d/r1/build/TASK-011/blocked": {
+      "issueKey": "SCRUM-1775",
+      "eventType": "TASK_BLOCKED",
+      "commentId": "15624",
+      "recordedAt": "2026-10-29T01:53:34Z"
+    },
+    "SCRUM-1761/94ccd08a-63e2-4200-8759-d974eda0593d/r1/build/TASK-011/completed": {
+      "issueKey": "SCRUM-1775",
+      "eventType": "TASK_COMPLETED",
+      "commentId": "15626",
+      "recordedAt": "2026-10-29T02:03:50Z"
+    },
+    "SCRUM-1761/94ccd08a-63e2-4200-8759-d974eda0593d/r1/build/TASK-012/started": {
+      "issueKey": "SCRUM-1776",
+      "eventType": "TASK_STARTED",
+      "commentId": "15627",
+      "recordedAt": "2026-10-29T02:04:05Z"
+    },
+    "SCRUM-1761/94ccd08a-63e2-4200-8759-d974eda0593d/r1/build/TASK-013/started": {
+      "issueKey": "SCRUM-1777",
+      "eventType": "TASK_STARTED",
+      "commentId": "15629",
+      "recordedAt": "2026-10-29T02:05:36Z"
+    },
+    "SCRUM-1761/94ccd08a-63e2-4200-8759-d974eda0593d/r1/build/TASK-014/completed": {
+      "issueKey": "SCRUM-1778",
+      "eventType": "TASK_COMPLETED",
+      "recordedAt": "2026-10-29T02:16:00Z"
+    },
+    "SCRUM-1761/94ccd08a-63e2-4200-8759-d974eda0593d/r1/build/TASK-015/completed": {
+      "issueKey": "SCRUM-1779",
+      "eventType": "TASK_COMPLETED",
+      "recordedAt": "2026-10-29T02:16:00Z"
+    },
+    "SCRUM-1761/94ccd08a-63e2-4200-8759-d974eda0593d/r1/build/TASK-016/completed": {
+      "issueKey": "SCRUM-1780",
+      "eventType": "TASK_COMPLETED",
+      "recordedAt": "2026-10-29T02:16:00Z"
+    },
+    "SCRUM-1761/94ccd08a-63e2-4200-8759-d974eda0593d/r1/build/TASK-017/completed": {
+      "issueKey": "SCRUM-1781",
+      "eventType": "TASK_COMPLETED",
+      "recordedAt": "2026-10-29T02:16:00Z"
+    },
+    "SCRUM-1761/94ccd08a-63e2-4200-8759-d974eda0593d/r1/build/TASK-018/completed": {
+      "issueKey": "SCRUM-1782",
+      "eventType": "TASK_COMPLETED",
+      "recordedAt": "2026-10-29T02:16:00Z"
+    },
+    "SCRUM-1761/94ccd08a-63e2-4200-8759-d974eda0593d/r1/build/TASK-019/completed": {
+      "issueKey": "SCRUM-1783",
+      "eventType": "TASK_COMPLETED",
+      "recordedAt": "2026-10-29T13:46:00-03:00"
+    },
+    "SCRUM-1761/94ccd08a-63e2-4200-8759-d974eda0593d/r1/build/TASK-020/completed": {
+      "issueKey": "SCRUM-1784",
+      "eventType": "TASK_COMPLETED",
+      "recordedAt": "2026-10-29T13:46:00-03:00"
+    },
+    "SCRUM-1761/94ccd08a-63e2-4200-8759-d974eda0593d/r1/build/qa/1/TASK_PROGRESS": {
+      "issueKey": "SCRUM-1785",
+      "eventType": "TASK_PROGRESS",
+      "recordedAt": "2026-10-29T13:50:00-03:00"
+    },
+    "SCRUM-1761/94ccd08a-63e2-4200-8759-d974eda0593d/r1/build/qa/2/QA_PASSED": {
+      "issueKey": "SCRUM-1785",
+      "eventType": "QA_PASSED",
+      "recordedAt": "2026-10-29T13:51:00-03:00"
+    },
+    "SCRUM-1761/94ccd08a-63e2-4200-8759-d974eda0593d/r1/build/code-review/completed": {
+      "issueKey": "SCRUM-1761",
+      "eventType": "CODE_REVIEW_COMPLETED",
+      "recordedAt": "2026-10-29T13:52:00-03:00"
+    }
+  },
+  "pendingJiraEvents": [],
+  "blockers": [],
+  "validations": [],
+  "visualEvidence": {
+    "criteria": [
+      {
+        "criteriaId": "AC-001"
+      },
+      {
+        "criteriaId": "AC-002"
+      },
+      {
+        "criteriaId": "AC-003"
+      },
+      {
+        "criteriaId": "AC-004"
+      },
+      {
+        "criteriaId": "AC-005"
+      }
+    ]
+  },
+  "updatedAt": "2026-10-29T13:46:00-03:00",
+  "codeReview": {
+    "startedAt": "2026-10-29T13:51:00-03:00",
+    "finishedAt": "2026-10-29T13:52:00-03:00",
+    "status": "REVIEWED",
+    "findings": {
+      "critical": 0,
+      "high": 0,
+      "medium": 2,
+      "low": 5
+    }
+  }
+}

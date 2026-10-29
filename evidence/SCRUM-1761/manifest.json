@@ -1,0 +1,170 @@
+{
+  "runner": "claude",
+  "evidence": [
+    {
+      "criteriaId": "AC-001",
+      "kind": "official",
+      "status": "pass",
+      "viewport": "iPhone 17 Pro iOS 26.5 1206x2622",
+      "file": "SCRUM-1761-AC-001-ios265-glass-dark.png",
+      "mimeType": "image/png",
+      "size": 1420971,
+      "sha256": "536e1b188f3ab53f5669189e8f63c8169d6ff63f0cfe61e52be1acf87c001690",
+      "containsSensitiveData": false
+    },
+    {
+      "criteriaId": "AC-001",
+      "kind": "official",
+      "status": "pass",
+      "viewport": "iPhone 17 Pro iOS 26.5 1206x2622",
+      "file": "SCRUM-1761-AC-001-ios265-glass-light.png",
+      "mimeType": "image/png",
+      "size": 1616347,
+      "sha256": "afd56edd4991eb48c053422e88096d7e1b4f1bc6bae64ea6de050976774a3bb5",
+      "containsSensitiveData": false
+    },
+    {
+      "criteriaId": "AC-001",
+      "kind": "official",
+      "status": "pass",
+      "viewport": "macOS 26.6 window 560x976",
+      "file": "SCRUM-1761-AC-001-macos26-glass-dark.png",
+      "mimeType": "image/png",
+      "size": 254102,
+      "sha256": "a6e13a4b3b16915d06eb83ede8983533ecffe9ee3dbefbcca7d6872418bcd0fe",
+      "containsSensitiveData": false
+    },
+    {
+      "criteriaId": "AC-001",
+      "kind": "official",
+      "status": "pass",
+      "viewport": "macOS 26.6 window 560x976",
+      "file": "SCRUM-1761-AC-001-macos26-glass-light.png",
+      "mimeType": "image/png",
+      "size": 274501,
+      "sha256": "43aa158f1e1acd167fcaac0d7a9c6fb0249601cd36e19b3cafe414d14ef42375",
+      "containsSensitiveData": false
+    },
+    {
+      "criteriaId": "AC-002",
+      "kind": "official",
+      "status": "pass",
+      "viewport": "iPhone 17 Pro iOS 26.5 1206x2622 | Material forcado; operador aceitou a aproximacao (sem runtime anterior ao OS 26)",
+      "file": "SCRUM-1761-AC-002-ios265-material-proxy-dark.png",
+      "mimeType": "image/png",
+      "size": 2028723,
+      "sha256": "b57e385aa0c90977f21b7087e2919b3ea3ff61e54f8348b03371bb9c9e79750c",
+      "containsSensitiveData": false
+    },
+    {
+      "criteriaId": "AC-002",
+      "kind": "official",
+      "status": "pass",
+      "viewport": "iPhone 17 Pro iOS 26.5 1206x2622 | Material forcado; operador aceitou a aproximacao (sem runtime anterior ao OS 26)",
+      "file": "SCRUM-1761-AC-002-ios265-material-proxy-light.png",
+      "mimeType": "image/png",
+      "size": 2169405,
+      "sha256": "71ea2546ac3ee8a1e9444202ba023d0d0fa2fc101f221dd23914d385ed350c28",
+      "containsSensitiveData": false
+    },
+    {
+      "criteriaId": "AC-003",
+      "kind": "official",
+      "status": "pass",
+      "viewport": "iPhone 17 Pro iOS 26.5 1206x2622",
+      "file": "SCRUM-1761-AC-003-ios265-legibilidade-dark.png",
+      "mimeType": "image/png",
+      "size": 1094694,
+      "sha256": "a453b5aaa82ac6a9f2e97bafe368c6f051ef7a26c34da5b4fff41e15963c265e",
+      "containsSensitiveData": false
+    },
+    {
+      "criteriaId": "AC-003",
+      "kind": "official",
+      "status": "pass",
+      "viewport": "iPhone 17 Pro iOS 26.5 1206x2622",
+      "file": "SCRUM-1761-AC-003-ios265-legibilidade-light.png",
+      "mimeType": "image/png",
+      "size": 1263949,
+      "sha256": "f1abe43f6504f4af159d70886a91de4663f375ddc4fe2707d54d7a6bbdc62b8b",
+      "containsSensitiveData": false
+    },
+    {
+      "criteriaId": "AC-004",
+      "kind": "official",
+      "status": "pass",
+      "viewport": "iPhone 17 Pro iOS 26.5 1206x2622",
+      "file": "SCRUM-1761-AC-004-ios265-aumentar-contraste-dark.png",
+      "mimeType": "image/png",
+      "size": 1411032,
+      "sha256": "52fbfece9ea385d3ba72efe2dc41599a87c6998cb20c21bb29544bbf8358c1d7",
+      "containsSensitiveData": false
+    },
+    {
+      "criteriaId": "AC-004",
+      "kind": "official",
+      "status": "pass",
+      "viewport": "iPhone 17 Pro iOS 26.5 1206x2622",
+      "file": "SCRUM-1761-AC-004-ios265-aumentar-contraste-light.png",
+      "mimeType": "image/png",
+      "size": 1602672,
+      "sha256": "5d320e4a00fb54323d7648f8b1bfc390b552cf9765d4da5d6d8cb09b806005aa",
+      "containsSensitiveData": false
+    },
+    {
+      "criteriaId": "AC-004",
+      "kind": "official",
+      "status": "pass",
+      "viewport": "iPhone 17 Pro iOS 26.5 1206x2622",
+      "file": "SCRUM-1761-AC-004-ios265-reduzir-transparencia-dark.png",
+      "mimeType": "image/png",
+      "size": 1404837,
+      "sha256": "687282d72b2f39cd3ddd5cc140a3df7d545623f97a14ca6c0f41c9eb73628b84",
+      "containsSensitiveData": false
+    },
+    {
+      "criteriaId": "AC-004",
+      "kind": "official",
+      "status": "pass",
+      "viewport": "iPhone 17 Pro iOS 26.5 1206x2622",
+      "file": "SCRUM-1761-AC-004-ios265-reduzir-transparencia-light.png",
+      "mimeType": "image/png",
+      "size": 1595076,
+      "sha256": "704d339979186cd6a3063c7499b1f2fe990c8fdbb704ca83e8137b4d8428675b",
+      "containsSensitiveData": false
+    },
+    {
+      "criteriaId": "AC-005",
+      "kind": "official",
+      "status": "pass",
+      "viewport": "iPhone 17 Pro iOS 26.1 1206x2622",
+      "file": "SCRUM-1761-AC-005-ios261-terminal.png",
+      "mimeType": "image/png",
+      "size": 147249,
+      "sha256": "620381047951697a74540da9bc383d2a08f31f6f3d33d12050a754053c837b6a",
+      "containsSensitiveData": false
+    },
+    {
+      "criteriaId": "AC-005",
+      "kind": "exploratory",
+      "status": "pass",
+      "viewport": "iPhone 17 Pro iOS 26.1 1206x2622",
+      "file": "SCRUM-1761-AC-005-ios261-board-support.png",
+      "mimeType": "image/png",
+      "size": 241950,
+      "sha256": "2b33a6f0973043baf190b25fee0cd2a1326c5809beb5376e77bda5f5700b9491",
+      "containsSensitiveData": false
+    },
+    {
+      "criteriaId": "AC-005",
+      "kind": "exploratory",
+      "status": "pass",
+      "viewport": "iPhone 17 Pro iOS 26.1 1206x2622",
+      "file": "SCRUM-1761-AC-005-ios261-card-detail-support.png",
+      "mimeType": "image/png",
+      "size": 203274,
+      "sha256": "36773e0213f141d9f2d91b6fe302072995e27778a545c3499fb93a2672fdf82d",
+      "containsSensitiveData": false
+    }
+  ]
+}
