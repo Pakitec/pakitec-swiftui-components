@@ -15,8 +15,7 @@ public struct PakitecTextField: View {
             TextField(prompt, text: $text)
                 .textFieldStyle(.plain)
                 .padding(.horizontal, 14).frame(minHeight: 48)
-                .background(PakitecTheme.surfaceElevated, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
-                .overlay(RoundedRectangle(cornerRadius: 12, style: .continuous).stroke(PakitecTheme.divider, lineWidth: 1))
+                .pakitecGlassSurface(.regular, in: RoundedRectangle(cornerRadius: 12, style: .continuous), solidFill: PakitecTheme.surfaceElevated)
         }
     }
 }

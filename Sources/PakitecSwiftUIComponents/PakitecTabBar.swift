@@ -34,7 +34,7 @@ public struct PakitecTabBar<ID: Hashable>: View {
             }
         }
         .padding(.horizontal, 8)
-        .background(PakitecTheme.surface)
+        .pakitecGlassSurface(.regular, in: Rectangle())
         .overlay(alignment: .top) { Rectangle().fill(PakitecTheme.divider).frame(height: 1) }
     }
 }

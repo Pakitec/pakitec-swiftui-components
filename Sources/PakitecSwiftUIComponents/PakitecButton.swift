@@ -54,6 +54,7 @@ private struct PakitecFilledButtonStyle: ButtonStyle {
     }
 }
 
+/// Botao secundario: vidro `regular` com tint do botao. O vidro cobre so o fundo (FR-005).
 private struct PakitecOutlinedButtonStyle: ButtonStyle {
     let color: Color
 
@@ -63,11 +64,18 @@ private struct PakitecOutlinedButtonStyle: ButtonStyle {
             .foregroundStyle(color)
             .frame(maxWidth: .infinity, minHeight: PakitecMetrics.buttonHeight)
             .padding(.horizontal, PakitecSpacing.large)
-            .background(color.opacity(configuration.isPressed ? 0.16 : 0.08), in: RoundedRectangle(cornerRadius: PakitecMetrics.buttonCornerRadius, style: .continuous))
-            .overlay { RoundedRectangle(cornerRadius: PakitecMetrics.buttonCornerRadius, style: .continuous).stroke(color.opacity(0.35), lineWidth: 1) }
+            .pakitecGlassSurface(
+                configuration.isPressed ? .strong : .regular,
+                tint: color,
+                in: RoundedRectangle(cornerRadius: PakitecMetrics.buttonCornerRadius, style: .continuous),
+                size: .small
+            )
+            .opacity(configuration.isPressed ? 0.92 : 1)
+            .contentShape(RoundedRectangle(cornerRadius: PakitecMetrics.buttonCornerRadius, style: .continuous))
     }
 }
 
+/// Botao ghost: sem fundo em repouso. O vidro `subtle` aparece so durante o toque.
 private struct PakitecGhostButtonStyle: ButtonStyle {
     let color: Color
 
@@ -77,6 +85,26 @@ private struct PakitecGhostButtonStyle: ButtonStyle {
             .foregroundStyle(color)
             .frame(maxWidth: .infinity, minHeight: PakitecMetrics.compactButtonHeight)
             .padding(.horizontal, PakitecSpacing.medium)
-            .background(color.opacity(configuration.isPressed ? 0.12 : 0), in: RoundedRectangle(cornerRadius: PakitecMetrics.buttonCornerRadius, style: .continuous))
+            .modifier(GhostPressedGlass(isPressed: configuration.isPressed, color: color))
+            .contentShape(RoundedRectangle(cornerRadius: PakitecMetrics.buttonCornerRadius, style: .continuous))
+    }
+}
+
+private struct GhostPressedGlass: ViewModifier {
+    let isPressed: Bool
+    let color: Color
+
+    @ViewBuilder
+    func body(content: Content) -> some View {
+        if isPressed {
+            content.pakitecGlassSurface(
+                .subtle,
+                tint: color,
+                in: RoundedRectangle(cornerRadius: PakitecMetrics.buttonCornerRadius, style: .continuous),
+                size: .small
+            )
+        } else {
+            content
+        }
     }
 }

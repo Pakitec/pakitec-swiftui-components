@@ -18,6 +18,32 @@ public enum PakitecTheme {
     public static let success = Color.green
     public static let warning = Color.orange
     public static let danger = Color.red
+
+    /// Opacidade minima do tint do vidro. Abaixo disso o tint some e a superficie perde identidade (FR-006).
+    public static let glassMinimumTintOpacity: Double = 0.04
+
+    /// Opacidade maxima do tint do vidro. Acima disso o vidro vira cor chapada e reduz o contraste do texto (FR-006, NFR-003).
+    public static let glassMaximumTintOpacity: Double = 0.30
+
+    /// Retorna a opacidade do tint do vidro para uma intensidade e um esquema de cor.
+    ///
+    /// O modo escuro usa valores um pouco maiores, pois o tint se perde sobre fundos escuros.
+    /// O resultado fica sempre entre `glassMinimumTintOpacity` e `glassMaximumTintOpacity`.
+    ///
+    /// - Parameters:
+    ///   - intensity: intensidade desejada da superficie.
+    ///   - colorScheme: esquema de cor atual (claro ou escuro).
+    /// - Returns: opacidade entre 0.04 e 0.30.
+    static func glassTintOpacity(_ intensity: PakitecGlassIntensity, colorScheme: ColorScheme) -> Double {
+        let isDark = colorScheme == .dark
+        let value: Double
+        switch intensity {
+        case .subtle: value = isDark ? 0.08 : 0.06
+        case .regular: value = isDark ? 0.14 : 0.10
+        case .strong: value = isDark ? 0.18 : 0.14
+        }
+        return min(max(value, glassMinimumTintOpacity), glassMaximumTintOpacity)
+    }
 }
 
 private extension Color {
