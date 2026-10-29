@@ -20,7 +20,7 @@ public struct PakitecAlertCard: View {
             Spacer(minLength: 0)
         }
         .padding(14)
-        .background(color.opacity(0.10), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+        .pakitecGlassSurface(.strong, tint: color, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
         .overlay(RoundedRectangle(cornerRadius: 12, style: .continuous).stroke(color.opacity(0.25), lineWidth: 1))
     }
 

@@ -1,6 +1,31 @@
 import SwiftUI
 
-private struct PakitecComponentsPreview: View {
+/// Variante de acessibilidade ou de ramo de renderizacao exibida pelo preview.
+enum PakitecPreviewVariant: String, CaseIterable {
+    case standard = "Padrão"
+    case reduceTransparency = "Reduzir transparência"
+    case increasedContrast = "Aumentar contraste"
+    case material = "Material (fallback)"
+
+    var overrides: PakitecGlassOverrides {
+        switch self {
+        case .standard: PakitecGlassOverrides()
+        case .reduceTransparency: PakitecGlassOverrides(reduceTransparency: true, increasedContrast: false)
+        case .increasedContrast: PakitecGlassOverrides(reduceTransparency: false, increasedContrast: true)
+        case .material: PakitecGlassOverrides(reduceTransparency: false, increasedContrast: false, forceMaterial: true)
+        }
+    }
+}
+
+/// Catalogo visual dos 8 componentes com vidro, sobre fundo colorido para o vidro aparecer.
+///
+/// - Parameters:
+///   - colorScheme: tema forcado; `nil` segue o sistema.
+///   - variant: forca "Reduzir transparencia", "Aumentar contraste" ou o ramo Material.
+struct PakitecComponentsPreview: View {
+    var colorScheme: ColorScheme?
+    var variant: PakitecPreviewVariant = .standard
+
     @State private var name = ""
     @State private var password = ""
     @State private var enabled = true
@@ -8,13 +33,26 @@ private struct PakitecComponentsPreview: View {
     @State private var choice = "Ativo"
     @State private var tab = "home"
 
+    /// Gradiente colorido atras do conteudo: sem ele, o vidro nao tem o que refratar (R7).
+    private var backdrop: some View {
+        ZStack {
+            PakitecTheme.background
+            LinearGradient(
+                colors: [.blue.opacity(0.55), .purple.opacity(0.45), .pink.opacity(0.45), .orange.opacity(0.4)],
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+        }
+        .ignoresSafeArea()
+    }
+
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 24) {
                 VStack(alignment: .leading, spacing: 6) {
                     Text("Pakitec Components")
                         .font(.largeTitle.bold())
-                    Text("Catálogo visual da biblioteca")
+                    Text("Catálogo visual da biblioteca · \(variant.rawValue)")
                         .foregroundStyle(PakitecTheme.secondaryText)
                 }
 
@@ -95,14 +133,20 @@ private struct PakitecComponentsPreview: View {
             }
             .padding()
         }
-        .background(PakitecTheme.background)
-        .preferredColorScheme(nil)
+        .background(backdrop)
+        .environment(\.pakitecGlassOverrides, variant.overrides)
+        .preferredColorScheme(colorScheme)
     }
 }
 
 // Preview único para manter o consumo de memória baixo no Xcode.
+// Cada linha do menu de variantes vira uma tela: troque `colorScheme` e `variant` abaixo
+// (ou use o seletor do Xcode) para capturar claro/escuro e cada ramo de renderização.
 struct PakitecComponentsPreview_Previews: PreviewProvider {
     static var previews: some View {
-        PakitecComponentsPreview()
+        ForEach(PakitecPreviewVariant.allCases, id: \.self) { variant in
+            PakitecComponentsPreview(colorScheme: nil, variant: variant)
+                .previewDisplayName(variant.rawValue)
+        }
     }
 }

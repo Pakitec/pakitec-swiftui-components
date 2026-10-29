@@ -13,6 +13,6 @@ public struct PakitecCard<Content: View>: View {
         content
             .padding(padding)
             .frame(maxWidth: .infinity, alignment: .leading)
-            .background(.regularMaterial, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+            .pakitecGlassSurface(.regular, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
     }
 }

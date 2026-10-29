@@ -14,13 +14,28 @@ public struct PakitecBadge: View {
         Text(title)
             .font(.caption)
             .foregroundStyle(foreground)
-            .padding(.horizontal, 2)
+            .padding(.horizontal, PakitecSpacing.small)
             .padding(.vertical, 2)
-            .background(background, in: Capsule())
+            .modifier(BadgeSurface(tint: foreground, enabled: tone != .neutral))
     }
 
     private var foreground: Color {
         switch tone { case .neutral: PakitecTheme.primaryText; case .accent: PakitecTheme.accent; case .success: PakitecTheme.success; case .warning: PakitecTheme.warning; case .danger: PakitecTheme.danger }
     }
-    private var background: Color { tone == .neutral ? .clear : foreground.opacity(0.08) }
+}
+
+/// Vidro `subtle` em capsula. O badge neutro nao tem fundo.
+/// O texto de 12 pt mantem a cor do tom e fica fora do vidro (FR-005).
+private struct BadgeSurface: ViewModifier {
+    let tint: Color
+    let enabled: Bool
+
+    @ViewBuilder
+    func body(content: Content) -> some View {
+        if enabled {
+            content.pakitecGlassSurface(.subtle, tint: tint, in: Capsule(), size: .small)
+        } else {
+            content
+        }
+    }
 }

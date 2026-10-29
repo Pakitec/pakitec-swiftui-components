@@ -20,7 +20,7 @@ public struct PakitecTextEditor: View {
                 .frame(minHeight: minHeight)
                 .scrollContentBackground(.hidden)
                 .padding(PakitecSpacing.small)
-                .background(PakitecTheme.surfaceElevated, in: RoundedRectangle(cornerRadius: PakitecMetrics.buttonCornerRadius, style: .continuous))
+                .pakitecGlassSurface(.regular, in: RoundedRectangle(cornerRadius: PakitecMetrics.buttonCornerRadius, style: .continuous), solidFill: PakitecTheme.surfaceElevated)
         }
     }
 }
